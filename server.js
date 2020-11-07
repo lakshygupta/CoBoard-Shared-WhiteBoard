@@ -65,6 +65,10 @@ io.sockets.on('connection',
           socket.broadcast.emit('user-joined', name);
         });
 
+        socket.on('message', (evt) => {
+          log(evt)
+          socket.broadcast.emit('message', evt)
+      })  
 
   }
 );
